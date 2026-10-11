@@ -1,0 +1,20 @@
+[project]
+name = "sp-translation-tool"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jsonschema>=4.26.0",
+    "matplotlib>=3.10.9",
+    "plotly>=6.8.0",
+    "kaleido>=1.1.0",
+    "pandas>=3.0.2",
+    "scipy>=1.17.1",
+]
+
+# matlabengine is only needed for translation / Simscape extraction (requires a
+# local MATLAB R2024b install). Validation reads CSVs and does not need it.
+# On a machine with MATLAB:  uv sync --extra matlab
+[project.optional-dependencies]
+matlab = ["matlabengine==24.2.*"]

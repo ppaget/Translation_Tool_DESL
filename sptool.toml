@@ -1,0 +1,29 @@
+# sptool configuration.
+#
+# `base` is empty by default: the repo root is auto-detected from the code
+# location, so the project works as-is on any machine (Mac, Windows VM, ...).
+# Only set it if you need data dirs OUTSIDE the repo.
+
+[paths]
+base = ""
+# base = "C:\\Users\\paget\\projects\\sp_translation_tool"  # explicit override example
+
+[paths.subdirs]
+json_files        = "data/json_files"
+simscape_circuits = "data/simscape_circuits"
+emtp_circuits     = "data/emtp_circuits"
+emtp_results      = "data/emtp_results"
+simscape_results  = "data/simscape_results"
+
+[translation]
+# Optional whitelist. If empty/absent, translate_all processes every .json in json_files.
+whitelist = []
+
+# EMTP visual-layout matching (opt-in, default off → keep Simulink auto-arrange).
+# When true, blocks and their voltage/current probes are placed from the EMTP
+# JSON coordinates and auto-arrange is disabled so the layout is preserved.
+# CLI flags --emtp-layout / --no-emtp-layout override this.
+emtp_layout = false
+# Mirror the vertical axis (EMTP Y grows upward, Simulink downward).
+# Only relevant when emtp_layout = true. CLI: --flip-y / --no-flip-y.
+flip_y      = true
