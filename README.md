@@ -1,4 +1,4 @@
-# EMTP / Simscape Electrical Translation Tool
+# EMTPyScape - EMTP / Simscape Electrical Translation Tool
 
 **Msc. Semester Project**
 - **Project name** : Software tool to translate power system dynamic models across simulation platforms 
